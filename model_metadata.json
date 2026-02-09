@@ -1,0 +1,16 @@
+{
+  "model_type": "logistic",
+  "accuracy": 1.0,
+  "training_samples": 28,
+  "testing_samples": 12,
+  "features": [
+    "avg_reaction_time",
+    "reaction_time_variance",
+    "task_accuracy",
+    "hesitation_time",
+    "cursor_path_length",
+    "cursor_direction_changes",
+    "speed_variance"
+  ],
+  "trained_at": "2026-02-09T22:49:20.177973"
+}

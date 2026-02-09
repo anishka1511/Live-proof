@@ -1,0 +1,585 @@
+/* ===========================
+   Global Styles
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #000000 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #838383;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* ===========================
+   Header
+   =========================== */
+
+header {
+    background: linear-gradient(135deg, #bae3b1 0%, #7cd262 100%);
+    color: rgb(0, 0, 0);
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ===========================
+   Privacy Notice
+   =========================== */
+
+.privacy-notice {
+    background: #e8f4f8;
+    border-left: 4px solid #3498db;
+    padding: 15px 20px;
+    margin: 0;
+}
+
+.privacy-notice p {
+    font-size: 0.9rem;
+    color: #2c3e50;
+    line-height: 1.5;
+}
+
+/* ===========================
+   Screens
+   =========================== */
+
+.screen {
+    display: none;
+    padding: 40px;
+    min-height: 500px;
+}
+
+.screen.active {
+    display: block;
+}
+
+.content {
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.content p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* ===========================
+   Buttons
+   =========================== */
+
+.btn {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #bae3b1 0%, #7cd262 100%);
+    color: rgb(0, 0, 0);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #95a5a6;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #505656;
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   Session Info
+   =========================== */
+
+.session-info {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.session-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+#sessionId {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #667eea;
+}
+
+/* ===========================
+   Challenge Screen
+   =========================== */
+
+.challenge-container {
+    margin: 30px 0;
+}
+
+.challenge-display {
+    font-size: 1.3rem;
+    padding: 20px;
+    margin: 20px 0;
+    background: #f8f9fa;
+    border-radius: 10px;
+    color: #2c3e50;
+}
+
+.challenge-instructions {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 20px 0;
+    padding: 15px;
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    border-radius: 5px;
+}
+
+.interaction-area {
+    min-height: 300px;
+    margin: 30px 0;
+    position: relative;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 2px dashed #ddd;
+}
+
+.target-button {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #458342 0%, #1b4a19 100%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+}
+
+.target-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.5);
+}
+
+.sequence-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.sequence-btn {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 3px solid #667eea;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sequence-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: scale(1.05);
+}
+
+.sequence-btn.clicked {
+    background: #27ae60;
+    border-color: #27ae60;
+    color: white;
+}
+
+.sequence-btn.error {
+    background: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* ===========================
+   Processing Screen
+   =========================== */
+
+.loading-indicator {
+    margin: 40px 0;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.feature-display {
+    margin-top: 30px;
+    text-align: left;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 0.9rem;
+}
+
+.feature-item:last-child {
+    border-bottom: none;
+}
+
+.feature-name {
+    color: #555;
+}
+
+.feature-value {
+    font-weight: bold;
+    color: #667eea;
+}
+
+/* ===========================
+   Results Screen
+   =========================== */
+
+.score-container {
+    margin: 30px 0;
+}
+
+.score-circle {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 12px solid;
+    transition: all 0.5s ease;
+}
+
+.score-circle.high {
+    border-color: #27ae60;
+    background: linear-gradient(135deg, #a8e6cf 0%, #dcedc8 100%);
+}
+
+.score-circle.medium {
+    border-color: #f39c12;
+    background: linear-gradient(135deg, #ffd89b 0%, #ffe5b4 100%);
+}
+
+.score-circle.low {
+    border-color: #e74c3c;
+    background: linear-gradient(135deg, #ffcccc 0%, #ffdddd 100%);
+}
+
+.score-value {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.score-label {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+.confidence-level {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.confidence-level.high {
+    background: #27ae60;
+    color: white;
+}
+
+.confidence-level.medium {
+    background: #f39c12;
+    color: white;
+}
+
+.confidence-level.low {
+    background: #e74c3c;
+    color: white;
+}
+
+/* ===========================
+   Explainability Section
+   =========================== */
+
+.explainability-section {
+    text-align: left;
+    margin: 30px 0;
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.explainability-section h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.explanation-intro {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.feature-importance {
+    margin-bottom: 20px;
+}
+
+.importance-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin: 8px 0;
+    background: white;
+    border-radius: 8px;
+}
+
+.importance-item .feature-label {
+    font-weight: 500;
+    color: #2c3e50;
+    flex: 1;
+}
+
+.importance-item .importance-bar {
+    width: 150px;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    margin: 0 15px;
+    overflow: hidden;
+}
+
+.importance-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.importance-item .importance-value {
+    font-weight: bold;
+    color: #667eea;
+    min-width: 60px;
+    text-align: right;
+}
+
+.analysis-details {
+    margin-top: 15px;
+}
+
+.analysis-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    margin: 8px 0;
+    background: white;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+.analysis-item .icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    min-width: 24px;
+}
+
+.analysis-item.positive .icon {
+    color: #27ae60;
+}
+
+.analysis-item.negative .icon {
+    color: #e74c3c;
+}
+
+.analysis-item .text {
+    color: #555;
+}
+
+/* ===========================
+   Audit Section
+   =========================== */
+
+.audit-section {
+    text-align: left;
+    margin: 30px 0;
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.audit-section h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.audit-output {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.audit-item {
+    margin: 8px 0;
+    color: #555;
+}
+
+.audit-label {
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+
+footer {
+    background: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+.disclaimer {
+    font-size: 0.85rem;
+    color: #777;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .content h2 {
+        font-size: 1.5rem;
+    }
+
+    .score-circle {
+        width: 160px;
+        height: 160px;
+    }
+
+    .score-value {
+        font-size: 3rem;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    .sequence-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+
+    .importance-item .importance-bar {
+        width: 100px;
+    }
+}
