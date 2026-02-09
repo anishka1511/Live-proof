@@ -373,4 +373,4 @@ Built following ML best practices:
 
 ---
 
-**Built with ❤️ for privacy-first ML verification**
+
